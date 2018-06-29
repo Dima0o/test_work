@@ -1,54 +1,48 @@
-/*
-import React, { Component } from 'react';
-
-import classNames from 'classnames';
-
-
-
-export default class Example extends Component {
-  static defaultProps = {
-    size: 'maxi'
-  }
-
-  render () {
-    const { size, children } = this.props;
-    const headerClasses = classNames({
-      header: true,
-      'header--mini': size === 'mini',
-      'header--maxi': size === 'maxi',
-    })
-
-    return (
-
-
-                  <section>
-                      <h1 className="text-center text-primary">Pure CSS Bootstrap 4 Cascading Drop Down Menu</h1>
-                      <p clas="text-center"> A simple Bootstrap 4 dropdown navigation menu made with CSS Only. Dropdowns
-                          are marked with a plus sign ( + )</p>
-                  </section>
-
-
-    )
-  }
-}*/
-
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
 
-const Example = (props) => {
-    return (
-        <div>
-            <Jumbotron>
-                <h1 className="display-3">Hello, world!</h1>
-                <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-                <hr className="my-2" />
-                <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
-                <p className="lead">
-                    <Button color="primary">Learn More</Button>
-                </p>
-            </Jumbotron>
-        </div>
-    );
-};
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-export default Example;
+
+
+class Breadcrumbs extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {items: ['hello', 'world', 'click', 'me']};
+        this.handleAdd = this.handleAdd.bind(this);
+    }
+
+    handleAdd() {
+        const newItems = this.state.items.concat([
+            prompt('Enter some text')
+        ]);
+        this.setState({items: newItems});
+    }
+
+    handleRemove(i) {
+        let newItems = this.state.items.slice();
+        newItems.splice(i, 1);
+        this.setState({items: newItems});
+    }
+
+    render() {
+        const items = this.state.items.map((item, i) => (
+            <div key={item} onClick={() => this.handleRemove(i)}>
+                {item}
+            </div>
+        ));
+
+        return (
+            <div>
+                <button onClick={this.handleAdd}>Add Item</button>
+                <ReactCSSTransitionGroup
+                    transitionName="example"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+
+                    {items}
+                </ReactCSSTransitionGroup>
+            </div>
+        );
+    }
+}
+export default Breadcrumbs;

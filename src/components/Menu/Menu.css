@@ -1,0 +1,11 @@
+.header {
+  background-color: bisque;
+}
+
+.header--maxi {
+  height: 200px;
+}
+
+.header--mini {
+  height: 50px;
+}
