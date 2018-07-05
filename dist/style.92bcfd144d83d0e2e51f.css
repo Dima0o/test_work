@@ -1,0 +1,9 @@
+.header {
+  background-color: bisque;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px; }
+  .header--maxi {
+    height: 200px; }
+  .header--mini {
+    height: 50px; }

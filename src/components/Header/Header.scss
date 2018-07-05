@@ -1,0 +1,13 @@
+.header {
+  background-color: bisque;
+  display: flex;
+  border-radius: 5px;
+
+  &--maxi {
+    height: 200px;
+  }
+  
+  &--mini {
+    height: 50px;
+  }
+}

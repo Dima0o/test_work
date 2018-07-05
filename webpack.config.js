@@ -1,6 +1,7 @@
 const path = require('path');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: { 
@@ -8,7 +9,17 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.[chunkhash].js'
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      components: path.resolve(__dirname, 'src', 'components'),
+      containers: path.resolve(__dirname, 'src', 'containers'),
+      assets: path.resolve(__dirname, 'src', 'assets'),
+      actions: path.resolve(__dirname, 'src', 'actions'),
+      reducers: path.resolve(__dirname, 'src', 'reducers'),
+    }
   },
   module: {
     rules: [
@@ -20,18 +31,25 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader']
+          use: ['css-loader', 'postcss-loader', 'sass-loader']
         })
       }
     ]
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
+    historyApiFallback: true
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'style.css' })
+    new ExtractTextPlugin({
+      filename: 'style.[chunkhash].css'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'index.html'),
+      filename: 'index.html'
+    })
   ]
 }
