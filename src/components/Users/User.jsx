@@ -31,6 +31,7 @@ export default class User extends PureComponent {
                   </CardText>
                 </CardImgOverlay>
               </Card>
+              
             </div>
 
     );
