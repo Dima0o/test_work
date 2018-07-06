@@ -19,27 +19,34 @@ export default class User extends PureComponent {
 
     render() {
         const {user} = this.props;
+        //const description = <Description name={user.name} />;
         const element = <Welcome name="Sara" />;
+        //const Favorites = <Favorites name="Sara" />;
+        // const Tocart = <Tocart name="Sara" />;
         return (
-
             <li to={`/users/${user.id}`} className="grid-tile">
-                <Card className="item">
-                     <div className="item-pnl">
-                         {element}
-                        <div className="pnl-wrapper">
-                            <div className="pnl-description">
-                                <span className="pnl-label">{user.title}</span>
-                                <span className="pnl-price">$100,00</span>
-                            </div>
+                <div class="item">
+                    <div class="item-pnl">
+                        <div class="pnl-wrapper">
+                            <App />
                         </div>
                     </div>
-                </Card>
+                </div>
             </li>
-
         );
     }
 }
 function Welcome(props) {
     return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+    return (
+        <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+        </div>
+    );
 }
 //https://redux-form.com/6.5.0/examples/simple/
