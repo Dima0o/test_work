@@ -19,11 +19,13 @@ export default class User extends PureComponent {
 
     render() {
         const {user} = this.props;
+        const element = <Welcome name="Sara" />;
         return (
 
             <li to={`/users/${user.id}`} className="grid-tile">
                 <Card className="item">
                      <div className="item-pnl">
+                         {element}
                         <div className="pnl-wrapper">
                             <div className="pnl-description">
                                 <span className="pnl-label">{user.title}</span>
@@ -36,5 +38,8 @@ export default class User extends PureComponent {
 
         );
     }
+}
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
 }
 //https://redux-form.com/6.5.0/examples/simple/
