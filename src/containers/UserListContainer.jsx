@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
-import '../components/Users/Prod.scss';
+
 import { loadPost } from 'actions/users';
 import Forms from 'components/Forms/Forms';
 import UserList from 'components/Users/UserList';
@@ -25,11 +25,10 @@ class UserListContainer extends PureComponent {
                <Forms showHide="true" titel="Производитель" />
             </Col>
             <Col xs="9">
-              <CardDeck>
-                <ul class="grid">
+              <Row>
+
                   { loading ? <Loading /> : <UserList users={users} /> }
-                </ul>
-              </CardDeck>
+              </Row>
             </Col>
           </Row>
         </Container>

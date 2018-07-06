@@ -17,9 +17,12 @@
     "bootstrap": "^4.1.1",
     "classnames": "^2.2.5",
     "react": "^16.4.1",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
+    "react-icons": "^2.2.7",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-svg-morph": "^0.2.1",
     "reactstrap": "^6.2.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.4.0"

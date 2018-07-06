@@ -1,13 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Provider } from 'react-redux'; 
+import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import FaBeer from 'react-icons/lib/fa/beer';
 import routes from './routes';
 import store from './store';
 import { Container, Row, Col } from 'reactstrap';
 import Header from 'components/Header';
 import { Jumbotron, Button } from 'reactstrap';
+
 class App extends Component {
   render () {
     return (
