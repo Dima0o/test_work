@@ -23,7 +23,8 @@ export default class UserList extends PureComponent {
 
 
                 <Fragment>
-                   {users.map((user, idx) => <User key={idx} user={user} />)}
+
+                        {users.map((user, idx) => <User key={idx} user={user} />)}
                 </Fragment>
 
     );
