@@ -10,6 +10,8 @@ import { Col,  Form, FormGroup, Label,  FormText } from 'reactstrap';
 import AddCard from 'react-icons/lib/md/add-shopping-cart';
 import Add from 'react-icons/lib/md/add';
 import Remove from 'react-icons/lib/md/remove';
+import MdStar from 'react-icons/lib/md/star';
+import MdStarHalf from 'react-icons/lib/md/star-half';
 
 import { MorphReplace } from 'react-svg-morph';
 export default class User extends PureComponent {
@@ -65,19 +67,23 @@ export default class User extends PureComponent {
         const { counter } = this.state;
         //const description = <Description name={user.name} />;
         const element = <Welcome name="Sara" />;
-       const status =()=>{
+     /*   const status =()=>{
            if (!this.state.outline){
               let status="outline";
            }
-       }
+       }*/
         return (
                 <div sm="6" to={`/users/${user.id}`} class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                     <Card>
                         <CardBody>
-                            <CardTitle>{user.title}</CardTitle>
+                            <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                             <CardText>
-                                {user.body}
+                                <MdStar/><MdStar/><MdStar/><MdStarHalf/>
+                            <br />
+                                {user.title}
                             </CardText>
+
+
                             <CardText>
                                 <FormGroup row>
                                     <Button    size="sm" color="link" onClick={this.handleMinusClick}><Remove /></Button>
@@ -86,7 +92,7 @@ export default class User extends PureComponent {
                                     {' '}
                                         <Button   size="sm"   color="link" onClick={this.handlePlusClick}><Add /></Button>
 
-                                    <Button onClick={this.handleAddClick} {status}  size="sm" color="primary"><AddCard /></Button>{' '}
+                                    <Button onClick={this.handleAddClick}  size="sm" color="primary"><AddCard /></Button>{' '}
                                 </FormGroup>
                             </CardText>
                         </CardBody>
