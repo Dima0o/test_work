@@ -12,6 +12,8 @@ import Add from 'react-icons/lib/md/add';
 import Remove from 'react-icons/lib/md/remove';
 import MdStar from 'react-icons/lib/md/star';
 import MdStarHalf from 'react-icons/lib/md/star-half';
+import MdFavoriteBorder from 'react-icons/lib/md/favorite-border';
+import MdFavorite from 'react-icons/lib/md/favorite';
 
 import { MorphReplace } from 'react-svg-morph';
 export default class User extends PureComponent {
@@ -78,7 +80,7 @@ export default class User extends PureComponent {
                         <CardBody>
                             <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
                             <CardText>
-                                <MdStar/><MdStar/><MdStar/><MdStarHalf/>
+                              <MdFavoriteBorder/>  <MdStar/><MdStar/><MdStar/><MdStarHalf/>
                             <br />
                                 {user.title}
                             </CardText>

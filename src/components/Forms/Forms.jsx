@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Card, CardImg, CardText, CardBody,    CardTitle, CardSubtitle,CustomInput} from 'reactstrap';
 import { Badge } from 'reactstrap';
+
+import MdArrowDropDown from 'react-icons/lib/md/arrow-drop-down';
 export default class Forms extends PureComponent {
   constructor(props) {
     super(props);
@@ -33,9 +35,10 @@ export default class Forms extends PureComponent {
     return (
     <Card>
       <CardTitle>
-        <Button  onClick={this.showReplyForm} size="sm" block  type="button" color="primary"><span class="glyphicon glyphicon-star"></span> Фильтр ^^^</Button>
+        <Button  onClick={this.showReplyForm} size="sm" block  type="button" color="primary">Фильтр <MdArrowDropDown/></Button>
       </CardTitle>
       <CardBody  style={showHide}>
+
         <Form>
           <FormGroup>
             <Label for="exampleCheckbox">{title}</Label>
