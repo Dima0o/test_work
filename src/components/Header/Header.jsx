@@ -44,6 +44,9 @@ export default class Header extends React.Component {
                             <NavItem>
                                 <NavLink href="/users/">Пользователи</NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink href="/hh/">Вакансии</NavLink>
+                            </NavItem>
 
                         </Nav>
                     </Collapse>

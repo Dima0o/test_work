@@ -21,10 +21,8 @@ class UserListContainer extends PureComponent {
     return (
         <Container>
           <Row>
-            <Col xs="3">
-               <Forms showHide="true" titel="Производитель" />
-            </Col>
-            <Col xs="9">
+            
+            <Col xs="12">
               <Row>
 
                   { loading ? <Loading /> : <UserList users={users} /> }

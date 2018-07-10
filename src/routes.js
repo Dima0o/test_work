@@ -1,5 +1,6 @@
 import UserList from 'containers/UserListContainer';
 import User from 'containers/UserContainer';
+import Job from 'containers/Job';
 import Counter from 'components/Counter';
 
 export default [
@@ -11,6 +12,11 @@ export default [
   {
     path: '/users/:userId',
     component: User,
+    exact: true
+  },
+  {
+    path: '/hh',
+    component: Job,
     exact: true
   },
   {
